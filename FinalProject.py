@@ -10,8 +10,6 @@ import os
 STOCK_API_KEY = 'e94271ad5ef44b5bb5d4bfda57f7188b'
 
 
-
-
 def read_cache(CACHE_FNAME):
     """
     This function reads from the JSON cache file and returns a dictionary from the cache data.
@@ -46,7 +44,7 @@ def write_cache(cache_file, cache_dict):
 
 def create_request_url():
     """
-    
+
     This function prepares and returns the request url for the API call.
     It takes in the stock ticker, start date, end date, interval, decimal places.
     The documentation of the API parameters is at https://twelvedata.com/docs.
@@ -76,7 +74,26 @@ def get_data_with_caching(CACHE_FNAME):
     """
     url = create_request_url()
     r = requests.get(url)
-    dict = json.loads(r.text)
+    cache_dict = json.loads(r.text)
+
+    # if datetime in cache_dict:
+    #     print(f"Using cache for {title}")
+
+    #     return cache_dict[url]
+    # else:
+    #     print(f"Fetching data for {title}")
+    #     try:
+    #         if r.text == '{"Response":"False","Error":"Movie not found!"}':
+    #             print("Movie Not Found")
+    #             return None
+    #         else:
+    #             cache_dict[url] = json.loads(r.text)
+    #             write_cache(CACHE_FNAME, cache_dict)
+                
+    #     except:
+    #         print("Exception")
+    #         return None
+    
 
 
 if __name__ == "__main__":
