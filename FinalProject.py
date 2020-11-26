@@ -42,7 +42,7 @@ def write_cache(cache_file, cache_dict):
     fw.close()
 
 
-def create_request_url():
+def create_request_url(start_date,end_date):
     """
 
     This function prepares and returns the request url for the API call.
@@ -53,8 +53,8 @@ def create_request_url():
     try:
         ticker = "AAPL"
         interval = "1day"  # 1min, 5min, 15min, 30min, 45min, 1h, 2h, 4h, 1day, 1week, 1month
-        start_date = "2020-05-01"
-        end_date = "2020-08-01"
+        # start_date = "2020-05-01"
+        # end_date = "2020-08-01"
         dp = 0  # decimal place, type int
 
         params = f"?symbol={ticker}&interval={interval}"\
@@ -72,28 +72,42 @@ def create_request_url():
 def get_data_with_caching(CACHE_FNAME):
     """get stock price data from the api with caching
     """
-    url = create_request_url()
+
+    timedict = {"5":"1"} #-->update  , "6":"30", "6":"30", "7":"31", "8":"31"
+
+    for month in timedict:
+        for day in range(1,int(timedict[month])+1):
+            if day <10:
+                datetime = "2020-"+"0"+month+"-0"+str(day)
+            else:
+                datetime = "2020-"+"0"+month+"-"+str(day)
+            # print(datetime)
+            fetch_data(datetime)
+
+    
+def fetch_data(datetime):
+    # get stock data at datetime
+    url = create_request_url(datetime, datetime)
     r = requests.get(url)
     cache_dict = json.loads(r.text)
 
-    # if datetime in cache_dict:
-    #     print(f"Using cache for {title}")
-
-    #     return cache_dict[url]
-    # else:
-    #     print(f"Fetching data for {title}")
-    #     try:
-    #         if r.text == '{"Response":"False","Error":"Movie not found!"}':
-    #             print("Movie Not Found")
-    #             return None
-    #         else:
-    #             cache_dict[url] = json.loads(r.text)
-    #             write_cache(CACHE_FNAME, cache_dict)
+    if datetime in cache_dict["values"][0][datetime]:
+        print(f"Using cache for {datetime}")
+        return cache_dict[datetime]
+    else:
+        print(f"Fetching data for {datetime}")
+        try:
+            if r.text == '{"Response":"False","Error":"Movie not found!"}':
+                print("Movie Not Found")
+                return None
+            else:
+                cache_dict[datetime] = json.loads(r.text)
+                write_cache(CACHE_FNAME, cache_dict)
                 
-    #     except:
-    #         print("Exception")
-    #         return None
-    
+        except:
+            print("Exception")
+            return None
+
 
 
 if __name__ == "__main__":
