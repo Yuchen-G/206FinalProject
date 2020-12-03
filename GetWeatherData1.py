@@ -10,10 +10,10 @@ import os
 from CacheHelper import CacheHelper
 
 Cache = CacheHelper()
-# Get the stock price data from twelve data api
-STOCK_API_KEY = 'e94271ad5ef44b5bb5d4bfda57f7188b'
-TIME_PERIOD = 60
-counter = 0     # counter
+counter = 0
+# Get the weather data from data api 
+weather_api_key = "9c9aed8125084cfaaa073014200312"
+weather_api_key_1 = "55d80763931641b2b5e73127200312"
 
 
 def check_progress(CACHE_FNAME):
@@ -29,30 +29,23 @@ def check_progress(CACHE_FNAME):
         return "2020-05-01"
 
 
-def create_request_url(start_date, end_date):
+def create_request_url(start_date):
     """
     This function prepares and returns the request url for the API call.
-    It takes in the stock ticker, start date, end date, interval, decimal places.
-    The documentation of the API parameters is at https://twelvedata.com/docs.
+    It takes in the FIXFIXFIX
+    The the API query website is FIX
     """
-
-    ticker = "MSFT"
-    interval = "1day"  # 1min, 5min, 15min, 30min, 45min, 1h, 2h, 4h, 1day, 1week, 1month
-    # start_date = "2020-05-01"
-    # end_date = "2020-08-01"
-    dp = 0  # decimal place, type int
-
-    params = f"?symbol={ticker}&interval={interval}"\
-        f"&start_date={start_date}&end_date={end_date}"\
-        f"&dp={dp}&apikey={STOCK_API_KEY}"
-
-    url = "https://api.twelvedata.com/time_series" + params
-    # print(url)
+    
+    location = "Cupertino"
+    tp = "24" # default daily weather
+   
+    params = f"?q={location}&date={start_date}&key={weather_api_key}&tp={tp}&format=json"
+    url = "https://api.worldweatheronline.com/premium/v1/past-weather.ashx" + params
     return url
 
 
 @sleep_and_retry
-@limits(calls=8, period=TIME_PERIOD)
+@limits(calls=25, period=30)
 def fetch_data(cache_dict, CACHE_FNAME, datetime, url):
     ''' fetch data from API
     '''
@@ -67,12 +60,12 @@ def fetch_data(cache_dict, CACHE_FNAME, datetime, url):
 
     try:
         # ---> will need to update the erro message, ticker especially when changing the company
-        if r.text == '''{"code":400,"message":"No data is available on the specified dates. Try setting different start/end dates.","status":"error","meta":{"symbol":"AAPL","interval":"1day","exchange":""}}''':
+        if r.text == "":    # --> update
             print("DATA NOT AVAILABLE\n--------------")
             return None
         else:
             content = json.loads(r.text)
-            cache_dict[datetime] = content["values"][0]
+            cache_dict[datetime] = content["data"]["weather"][0]["avgtempC"]
             Cache.write_cache(CACHE_FNAME, cache_dict)
             print("Data fetched\n--------------")
     except:
@@ -94,25 +87,6 @@ def cache_or_fetch(cache_dict, CACHE_FNAME, datetime, url):
 
     # Fetching data from API
     fetch_data(cache_dict, CACHE_FNAME, datetime, url)
-
-
-def get_date(CACHE_FNAME):
-    """
-    get the date for the url
-    """
-
-    dates = []
-    # -->update   "5": "31", "6": "30", "7": "31", "8": "31"
-    timedict = {"5": "31", "7": "31"}
-
-    # create a list containing all the dates
-    for month in timedict:
-        for day in range(1, int(timedict[month])+1):
-            if day < 10:
-                dates.append("2020-"+"0"+month+"-0"+str(day))
-            else:
-                dates.append("2020-"+"0"+month+"-"+str(day))
-    return dates
 
 
 def get_data_with_caching(CACHE_FNAME):
@@ -138,7 +112,7 @@ def get_data_with_caching(CACHE_FNAME):
             return
 
         cache_dict = Cache.read_cache(CACHE_FNAME)
-        url = create_request_url(datetime, datetime)
+        url = create_request_url(datetime)  # this line different from getstockdata
 
         # fetch data when no cache is available
         if len(cache_dict) == 0:
@@ -149,8 +123,31 @@ def get_data_with_caching(CACHE_FNAME):
             cache_or_fetch(cache_dict, CACHE_FNAME, datetime, url)
 
 
+def get_date(CACHE_FNAME):
+    """
+    get the date for the url
+    """
+
+    dates = []
+    # -->update   "5": "31", "6": "30", "7": "31", "8": "31"
+    timedict = {"5": "31", "7": "31"}
+
+    # create a list containing all the dates
+    for month in timedict:
+        for day in range(1, int(timedict[month])+1):
+            if day < 10:
+                dates.append("2020-"+"0"+month+"-0"+str(day))
+            else:
+                dates.append("2020-"+"0"+month+"-"+str(day))
+    return dates
+
+
 if __name__ == "__main__":
-    get_data_with_caching("cache_stock")
-    # print(create_request_url("2020-05-02", "2020-07-11"))
-    # print(check_progress('cache_stock'))
-    # get_date('cache_stock')
+    # setup for testing, needs to be removed after finished
+    CACHE_FNAME = "cache_weather"
+    cache_dict = Cache.read_cache(CACHE_FNAME)
+    url = create_request_url('2020-05-01')
+
+    # print(create_request_url("2020-05-01")
+    # fetch_data(cache_dict, CACHE_FNAME, "2020-05-01", url)
+    get_data_with_caching(CACHE_FNAME)
