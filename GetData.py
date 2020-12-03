@@ -1,12 +1,7 @@
 from CacheHelper import CacheHelper
-from os import name
-from typing import Counter
 from ratelimit import limits, sleep_and_retry
 import requests
 import json
-import urllib.request
-import urllib.parse
-import urllib.error
 
 
 class GetData:
@@ -153,6 +148,6 @@ class GetData:
     #             self.cache_or_fetch(cache_dict, datetime, url)
 
 
-if __name__ == "__main__":
-    stock = GetData("test_cache_stock")
-    stock.get_data_with_caching()
+# if __name__ == "__main__":
+    # stock = GetData("test_cache_stock")
+    # stock.get_data_with_caching()

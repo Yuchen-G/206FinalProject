@@ -7,13 +7,14 @@ from GetData import GetData
 # Get the stock price data from twelve data api
 class GetStockData(GetData):
     TIME_PERIOD = 60
+    CALLS = 8
 
     def __init__(self, CACHE_FNAME):
         super().__init__(CACHE_FNAME)
 
 
     @sleep_and_retry
-    @limits(calls=8, period=TIME_PERIOD)
+    @limits(calls=CALLS, period=TIME_PERIOD)
     def fetch_data(self, cache_dict, datetime, url):
         ''' fetch data from API
         '''
@@ -44,7 +45,6 @@ class GetStockData(GetData):
         """get stock price data from the api with caching
         """
 
-        # global counter
         # get the datetime that needs to be fetched from API or cached file
         last_date = self.check_progress()
         dates = self.get_date()
@@ -179,9 +179,9 @@ class GetStockData(GetData):
 
 
 
-if __name__ == "__main__":
-    Stock = GetStockData("test_cache_stock")
-    Stock.get_data_with_caching()
+# if __name__ == "__main__":
+#     Stock = GetStockData("test_cache_stock")
+#     Stock.get_data_with_caching()
     # print(create_request_url("2020-05-02", "2020-07-11"))
     # print(check_progress('cache_stock'))
     # get_date('cache_stock')
