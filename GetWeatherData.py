@@ -44,7 +44,7 @@ class GetWeatherData(GetData):
 
         try:
             content = json.loads(r.text)
-            cache_dict[datetime] = content["data"]["weather"][0]["avgtempC"]
+            cache_dict[datetime] = int(content["data"]["weather"][0]["avgtempC"])
             self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
             print("Data fetched\n--------------")
         except:
@@ -137,5 +137,5 @@ class GetWeatherData(GetData):
 
 
 # if __name__ == "__main__":
-    # Weather = GetWeatherData("test_cache_weather")
-    # Weather.get_data_with_caching()
+#     Weather = GetWeatherData("test_cache_weather")
+#     Weather.get_data_with_caching()

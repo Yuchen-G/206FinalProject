@@ -53,33 +53,33 @@ class GetData:
         # print(url)
         return url
 
-    @sleep_and_retry
-    @limits(calls=8, period= 60)
-    def fetch_data(self, cache_dict, datetime, url):
-        ''' fetch data from API
-        '''
+    # @sleep_and_retry
+    # @limits(calls=8, period= 60)
+    # def fetch_data(self, cache_dict, datetime, url):
+    #     ''' fetch data from API
+    #     '''
 
-        # global counter
-        # counter
-        self.counter += 1
-        print('# of calls made == ' + str(self.counter))
+    #     # global counter
+    #     # counter
+    #     self.counter += 1
+    #     print('# of calls made == ' + str(self.counter))
 
-        r = requests.get(url)
-        print(f"Fetching data for {datetime}")
+    #     r = requests.get(url)
+    #     print(f"Fetching data for {datetime}")
 
-        try:
-            # ---> will need to update the erro message, ticker especially when changing the company
-            if r.text == '''{"code":400,"message":"No data is available on the specified dates. Try setting different start/end dates.","status":"error","meta":{"symbol":"AAPL","interval":"1day","exchange":""}}''':
-                print("DATA NOT AVAILABLE\n--------------")
-                return None
-            else:
-                content = json.loads(r.text)
-                cache_dict[datetime] = content["values"][0]
-                self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
-                print("Data fetched\n--------------")
-        except:
-            print('Error when requesting url\n--------------')
-            return None
+    #     try:
+    #         # ---> will need to update the erro message, ticker especially when changing the company
+    #         if r.text == '''{"code":400,"message":"No data is available on the specified dates. Try setting different start/end dates.","status":"error","meta":{"symbol":"AAPL","interval":"1day","exchange":""}}''':
+    #             print("DATA NOT AVAILABLE\n--------------")
+    #             return None
+    #         else:
+    #             content = json.loads(r.text)
+    #             cache_dict[datetime] = content["values"][0]
+    #             self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
+    #             print("Data fetched\n--------------")
+    #     except:
+    #         print('Error when requesting url\n--------------')
+    #         return None
 
 
     def cache_or_fetch(self, cache_dict, datetime, url):

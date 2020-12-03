@@ -33,7 +33,7 @@ class GetStockData(GetData):
                 return None
             else:
                 content = json.loads(r.text)
-                cache_dict[datetime] = content["values"][0]
+                cache_dict[datetime] = int(content["values"][0]["close"])
                 self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
                 print("Data fetched\n--------------")
         except:
