@@ -17,8 +17,6 @@ class GetWeatherData(GetData):
     def create_request_url(self, start_date):
         """
         This function prepares and returns the request url for the API call.
-        It takes in the FIXFIXFIX
-        The the API query website is FIX
         """
         
         location = "Cupertino"

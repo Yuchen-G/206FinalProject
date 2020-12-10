@@ -35,3 +35,8 @@ the following form (20 points)
 ### Goals that we achieved
 
 ### The problems that we faced
+
+When trying to handle the bad value in the database, for example, weekends during which we don't have the stock price information, we decided to give
+a value of -99 for those dates in stockdata json file. Then when writing in to the database, we added an extra step in the end to make sure that we delete
+those dates which has a value of -99 in the stock data table. And we also delete those dates in the weather data accordingly with a JOIN statment. Thus, we can
+skip those dates with no stock price information when calculating the correlation coefficient or drawing graphs.

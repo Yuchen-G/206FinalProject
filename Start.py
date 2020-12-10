@@ -12,11 +12,12 @@ if __name__ == "__main__":
     tb2_name = "WeatherData"
     # Get Stock Data
     Stock = GetStockData(cache1)
-    Stock.get_data_with_caching()
+    # Stock.get_data_with_caching()
     # Get Weather Data
     Weather = GetWeatherData(cache2)
-    Weather.get_data_with_caching()
+    # Weather.get_data_with_caching()
     # Write data into database
     writer = WriteData(db_name, tb1_name, tb2_name)
     cur, conn = writer.SetUpDatabase()
     writer.SetUpTable(cache1, cache2, cur, conn)
+    print(writer.correl(cur, conn))
