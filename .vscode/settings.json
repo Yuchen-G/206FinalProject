@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/yc/opt/anaconda3/bin/python"
+    "python.pythonPath": "/Users/yc/opt/anaconda3/bin/python",
+    "compile-hero.disable-compile-files-on-did-save-code": false
 }

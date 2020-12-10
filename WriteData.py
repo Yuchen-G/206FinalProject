@@ -25,25 +25,25 @@ class WriteData:
         stock_data = self.Cache.read_cache(cachefile1)
         weather_data = self.Cache.read_cache(cachefile2)
         # create database
-        cur.execute(f"DROP TABLE IF EXISTS {self.tb_name_1}")
-        cur.execute(f"DROP TABLE IF EXISTS {self.tb_name_2}")
-        cur.execute(f"CREATE TABLE {self.tb_name_1} (id TEXT PRIMARY KEY, closing_price INTEGER)")
-        cur.execute(f"CREATE TABLE {self.tb_name_2} (id TEXT PRIMARY KEY, temp INTEGER)")
+        # cur.execute(f"DROP TABLE IF EXISTS {self.tb_name_1}")
+        # cur.execute(f"DROP TABLE IF EXISTS {self.tb_name_2}")
+        cur.execute(f"CREATE TABLE IF NOT EXISTS {self.tb_name_1} (id TEXT PRIMARY KEY, closing_price REAL)") # Attention data type is float for closing price
+        cur.execute(f"CREATE TABLE IF NOT EXISTS {self.tb_name_2} (id TEXT PRIMARY KEY, temp INTEGER)")
         # use for loop to enter records into table "StockData"
         for item in stock_data:
             id = item
             closing_price = stock_data[item]
-            cur.execute(f"INSERT INTO {self.tb_name_1} (id, closing_price) VALUES (?,?)", (id, closing_price))
+            cur.execute(f"INSERT OR IGNORE INTO {self.tb_name_1} (id, closing_price) VALUES (?,?)", (id, closing_price))
         # use for loop to enter records into table "WeatherData"
         for item in weather_data:
             id = item
             temp = weather_data[item]
-            cur.execute(f"INSERT INTO {self.tb_name_2} (id, temp) VALUES (?,?)", (id, temp))
+            cur.execute(f"INSERT OR IGNORE INTO {self.tb_name_2} (id, temp) VALUES (?,?)", (id, temp))
         # commit changes
         conn.commit()
 
 
-# if __name__ == "__main__":
-#     writer = WriteData("Warehouse", "StockData", "WeatherData")
-#     cur, conn = writer.SetUpDatabase()
-#     writer.SetUpTable("test_cache_stock", "test_cache_weather", cur, conn)
+if __name__ == "__main__":
+    writer = WriteData("Warehouse", "StockData", "WeatherData")
+    cur, conn = writer.SetUpDatabase()
+    writer.SetUpTable("cache_stock", "cache_weather", cur, conn)

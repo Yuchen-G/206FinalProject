@@ -43,14 +43,14 @@ class GetData:
         interval = "1day"  # 1min, 5min, 15min, 30min, 45min, 1h, 2h, 4h, 1day, 1week, 1month
         # start_date = "2020-05-01"
         # end_date = "2020-08-01"
-        dp = 0  # decimal place, type int
+        dp = 2  # decimal place, type int
 
         params = f"?symbol={ticker}&interval={interval}"\
             f"&start_date={start_date}&end_date={end_date}"\
             f"&dp={dp}&apikey={self.STOCK_API_KEY}"
 
         url = "https://api.twelvedata.com/time_series" + params
-        # print(url)
+        print(url)
         return url
 
     # @sleep_and_retry
@@ -80,7 +80,6 @@ class GetData:
     #     except:
     #         print('Error when requesting url\n--------------')
     #         return None
-
 
     def cache_or_fetch(self, cache_dict, datetime, url):
         ''' determine whether to fetch the data from API or use the cached content
@@ -112,7 +111,6 @@ class GetData:
                 else:
                     self.dates.append("2020-"+"0"+month+"-"+str(day))
         return self.dates
-
 
     # def get_data_with_caching(self):
     #     """get stock price data from the api with caching

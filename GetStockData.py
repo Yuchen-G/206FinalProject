@@ -29,11 +29,13 @@ class GetStockData(GetData):
         try:
             # ---> will need to update the erro message, ticker especially when changing the company
             if r.text == '''{"code":400,"message":"No data is available on the specified dates. Try setting different start/end dates.","status":"error","meta":{"symbol":"AAPL","interval":"1day","exchange":""}}''':
-                print("DATA NOT AVAILABLE\n--------------")
+                print("DATA NOT AVAILABLE, use previous data\n--------------")
+                cache_dict[datetime] = -99
+                self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
                 return None
             else:
                 content = json.loads(r.text)
-                cache_dict[datetime] = int(content["values"][0]["close"])
+                cache_dict[datetime] = float(content["values"][0]["close"])  # Attention!!! type is float
                 self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
                 print("Data fetched\n--------------")
         except:
@@ -72,6 +74,23 @@ class GetStockData(GetData):
             # determine whether to use cache or fetch
             else:
                 self.cache_or_fetch(cache_dict, datetime, url)
+
+        
+        # for index in range(len(dates)-1):
+        #     if self.counter == 25:
+        #         print("=============\nEnd of runing\n=============")
+        #         return
+
+        #     cache_dict = self.Cache.read_cache(self.CACHE_FNAME)
+        #     url = self.create_request_url(dates[index], dates[index+1])
+
+        #     # fetch data when no cache is available
+        #     if len(cache_dict) == 0:
+        #         self.fetch_data(cache_dict, dates[index], url)
+
+        #     # determine whether to use cache or fetch
+        #     else:
+        #         self.cache_or_fetch(cache_dict, dates[index], url)
 
 
 # def check_progress(CACHE_FNAME):
@@ -182,6 +201,6 @@ class GetStockData(GetData):
 # if __name__ == "__main__":
 #     Stock = GetStockData("test_cache_stock")
 #     Stock.get_data_with_caching()
-    # print(create_request_url("2020-05-02", "2020-07-11"))
-    # print(check_progress('cache_stock'))
-    # get_date('cache_stock')
+#     # print(Stock.create_request_url("2020-05-28", "2020-05-29"))
+#     # print(check_progress('cache_stock'))
+#     # get_date('cache_stock')
