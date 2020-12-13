@@ -62,6 +62,18 @@ class WriteData:
         # commit changes
         conn.commit()
 
+
+    def write_correl(self, filename, input):
+        '''
+        write the input into a txt file
+        '''
+
+        with open(filename,'a') as fh:
+            # lines = fh.readlines()
+            fh.write(input + '\n')
+
+
+
     def correl(self, col0, tb0, col1, tb1, cur, conn):
         """
         calculate the correlation coefficient for two datasets in the database
@@ -114,18 +126,31 @@ class WriteData:
         y = np.array(l1)
         plt.scatter(l0, l1)
         m, b = np.polyfit(x, y, 1)
-        plt.plot(x, m*x + b)
-        plt.set_xlabel('deathIncrease')
-        plt.set_ylabel('stock close price')
-        plt.set_title('deathIncrease vs. stock close price')
+        plt.plot(x, m*x + b, 'r')
+        plt.xlabel('Daily Covid Death Increase')
+        plt.ylabel("Apple stock's closing price")
+        plt.title('''Daily Covid Death Increase vs. Apple Stock's Closing Price''')
         plt.show()
 
-if __name__ == "__main__":
-    writer = WriteData("Warehouse", "StockData", "WeatherData", "CovidData")
-    cur, conn = writer.SetUpDatabase()
-    writer.viz('positiveIncrease', 'CovidData', 'closing_price', 'StockData', cur, conn)
+# if __name__ == "__main__":
+#     writer = WriteData("Warehouse", "StockData", "WeatherData", "CovidData")
+#     cur, conn = writer.SetUpDatabase()
 #     writer.SetUpTable("cache_stock", "cache_weather", "test_cache_Covid", cur, conn)
-#     print(writer.correl('temp', 'WeatherData', 'closing_price', 'StockData', cur, conn))
-#     print(writer.correl('deathIncrease', 'CovidData', 'closing_price', 'StockData', cur, conn))
-#     print(writer.correl('positiveIncrease', 'CovidData', 'closing_price', 'StockData', cur, conn))
-#     print(writer.correl('hospitalizedIncrease', 'CovidData', 'closing_price', 'StockData', cur, conn))
+#     # Correlation Coefficient 0
+#     correl0 = writer.correl('positiveIncrease', 'CovidData', 'closing_price', 'StockData', cur, conn)
+#     str0 = "Correlation coefficient between daily positive cases and Apple's stock price is "+ str(correl0)
+#     writer.write_correl('output.txt', str0)
+#     # Correlation Coefficient 1
+#     correl1 = writer.correl('temp', 'WeatherData', 'closing_price', 'StockData', cur, conn)
+#     str1 = "Correlation coefficient between temperature and Apple's stock price is "+ str(correl1)
+#     writer.write_correl('output.txt', str1)
+#     # Correlation Coefficient 2
+#     correl2 = writer.correl('deathIncrease', 'CovidData', 'closing_price', 'StockData', cur, conn)
+#     str2 = "Correlation coefficient between daily death cases and Apple's stock price is "+ str(correl2)
+#     writer.write_correl('output.txt', str2)
+#     # Correlation Coefficient 3
+#     correl3 = writer.correl('hospitalizedIncrease', 'CovidData', 'closing_price', 'StockData', cur, conn)
+#     str3 = "Correlation coefficient between daily hospitalized cases and Apple's stock price is "+ str(correl3)
+#     writer.write_correl('output.txt', str3)
+#     # Visualization
+#     writer.viz('positiveIncrease', 'CovidData', 'closing_price', 'StockData', cur, conn)

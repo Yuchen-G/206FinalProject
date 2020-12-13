@@ -39,7 +39,7 @@ class GetData:
         """
         This function prepares and returns the request url for the API call.
         It takes in the stock ticker, start date, end date, interval, decimal places.
-        The documentation of the API parameters is at https://twelvedata.com/docs.
+        The documentation of the API parameters is at https://marketstack.com/
         """
 
         ticker = "AAPL"

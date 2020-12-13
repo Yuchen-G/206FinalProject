@@ -1,1 +1,502 @@
-{"2020-05-01": {"deathIncrease": 1808, "hospitalizedIncrease": 9878, "positiveIncrease": 32802}, "2020-05-02": {"deathIncrease": 1531, "hospitalizedIncrease": 1986, "positiveIncrease": 29034}, "2020-05-03": {"deathIncrease": 1243, "hospitalizedIncrease": 1854, "positiveIncrease": 25540}, "2020-05-04": {"deathIncrease": 1028, "hospitalizedIncrease": 1772, "positiveIncrease": 22501}, "2020-05-05": {"deathIncrease": 2494, "hospitalizedIncrease": 1936, "positiveIncrease": 22510}, "2020-05-06": {"deathIncrease": 1916, "hospitalizedIncrease": 2159, "positiveIncrease": 25143}, "2020-05-07": {"deathIncrease": 2752, "hospitalizedIncrease": 4176, "positiveIncrease": 27227}, "2020-05-08": {"deathIncrease": 1781, "hospitalizedIncrease": 6240, "positiveIncrease": 27159}, "2020-05-09": {"deathIncrease": 1456, "hospitalizedIncrease": 1669, "positiveIncrease": 25180}, "2020-05-10": {"deathIncrease": 1032, "hospitalizedIncrease": 1048, "positiveIncrease": 20890}, "2020-05-11": {"deathIncrease": 894, "hospitalizedIncrease": 1369, "positiveIncrease": 18298}, "2020-05-12": {"deathIncrease": 1506, "hospitalizedIncrease": 1483, "positiveIncrease": 22558}, "2020-05-13": {"deathIncrease": 1734, "hospitalizedIncrease": 1791, "positiveIncrease": 21628}, "2020-05-14": {"deathIncrease": 1852, "hospitalizedIncrease": 3162, "positiveIncrease": 26713}, "2020-05-15": {"deathIncrease": 1263, "hospitalizedIncrease": 1313, "positiveIncrease": 25422}, "2020-05-16": {"deathIncrease": 1195, "hospitalizedIncrease": 1798, "positiveIncrease": 23586}, "2020-05-17": {"deathIncrease": 850, "hospitalizedIncrease": 1130, "positiveIncrease": 20152}, "2020-05-18": {"deathIncrease": 889, "hospitalizedIncrease": 1133, "positiveIncrease": 20844}, "2020-05-19": {"deathIncrease": 1332, "hospitalizedIncrease": 1549, "positiveIncrease": 20882}, "2020-05-20": {"deathIncrease": 1390, "hospitalizedIncrease": 1759, "positiveIncrease": 21259}, "2020-05-21": {"deathIncrease": 1427, "hospitalizedIncrease": 4547, "positiveIncrease": 26742}, "2020-05-22": {"deathIncrease": 1303, "hospitalizedIncrease": 3945, "positiveIncrease": 24173}, "2020-05-23": {"deathIncrease": 1035, "hospitalizedIncrease": 1383, "positiveIncrease": 22365}, "2020-05-24": {"deathIncrease": 684, "hospitalizedIncrease": 1027, "positiveIncrease": 18860}, "2020-05-25": {"deathIncrease": 554, "hospitalizedIncrease": 901, "positiveIncrease": 18531}, "2020-05-26": {"deathIncrease": 672, "hospitalizedIncrease": 17287, "positiveIncrease": 16978}, "2020-05-27": {"deathIncrease": 1316, "hospitalizedIncrease": 1563, "positiveIncrease": 19411}, "2020-05-28": {"deathIncrease": 1242, "hospitalizedIncrease": 1596, "positiveIncrease": 22659}, "2020-05-29": {"deathIncrease": 1169, "hospitalizedIncrease": 1565, "positiveIncrease": 23588}, "2020-05-30": {"deathIncrease": 918, "hospitalizedIncrease": 1425, "positiveIncrease": 23437}, "2020-05-31": {"deathIncrease": 651, "hospitalizedIncrease": 896, "positiveIncrease": 21392}, "2020-06-01": {"deathIncrease": 671, "hospitalizedIncrease": 2858, "positiveIncrease": 20362}, "2020-06-02": {"deathIncrease": 1000, "hospitalizedIncrease": 1736, "positiveIncrease": 20155}, "2020-06-03": {"deathIncrease": 980, "hospitalizedIncrease": 2145, "positiveIncrease": 20155}, "2020-06-04": {"deathIncrease": 864, "hospitalizedIncrease": -2849, "positiveIncrease": 20383}, "2020-06-05": {"deathIncrease": 844, "hospitalizedIncrease": 1513, "positiveIncrease": 23066}, "2020-06-06": {"deathIncrease": 711, "hospitalizedIncrease": 982, "positiveIncrease": 22558}, "2020-06-07": {"deathIncrease": 446, "hospitalizedIncrease": 655, "positiveIncrease": 18818}, "2020-06-08": {"deathIncrease": 676, "hospitalizedIncrease": 1095, "positiveIncrease": 17230}, "2020-06-09": {"deathIncrease": 901, "hospitalizedIncrease": 1263, "positiveIncrease": 17151}, "2020-06-10": {"deathIncrease": 884, "hospitalizedIncrease": 1237, "positiveIncrease": 20727}, "2020-06-11": {"deathIncrease": 899, "hospitalizedIncrease": 1527, "positiveIncrease": 22071}, "2020-06-12": {"deathIncrease": 763, "hospitalizedIncrease": 1380, "positiveIncrease": 23096}, "2020-06-13": {"deathIncrease": 690, "hospitalizedIncrease": 943, "positiveIncrease": 25245}, "2020-06-14": {"deathIncrease": 355, "hospitalizedIncrease": 610, "positiveIncrease": 21333}, "2020-06-15": {"deathIncrease": 406, "hospitalizedIncrease": 688, "positiveIncrease": 18654}, "2020-06-16": {"deathIncrease": 706, "hospitalizedIncrease": 1173, "positiveIncrease": 23268}, "2020-06-17": {"deathIncrease": 794, "hospitalizedIncrease": 1081, "positiveIncrease": 23906}, "2020-06-18": {"deathIncrease": 693, "hospitalizedIncrease": 1095, "positiveIncrease": 27089}, "2020-06-19": {"deathIncrease": 656, "hospitalizedIncrease": 1587, "positiveIncrease": 30959}, "2020-06-20": {"deathIncrease": 611, "hospitalizedIncrease": 686, "positiveIncrease": 31951}, "2020-06-21": {"deathIncrease": 293, "hospitalizedIncrease": 519, "positiveIncrease": 28848}, "2020-06-22": {"deathIncrease": 294, "hospitalizedIncrease": 847, "positiveIncrease": 27179}, "2020-06-23": {"deathIncrease": 725, "hospitalizedIncrease": 1262, "positiveIncrease": 33885}, "2020-06-24": {"deathIncrease": 707, "hospitalizedIncrease": 1255, "positiveIncrease": 39009}, "2020-06-25": {"deathIncrease": 663, "hospitalizedIncrease": 1279, "positiveIncrease": 39681}, "2020-06-26": {"deathIncrease": 624, "hospitalizedIncrease": 1546, "positiveIncrease": 44379}, "2020-06-27": {"deathIncrease": 502, "hospitalizedIncrease": 1048, "positiveIncrease": 42893}, "2020-06-28": {"deathIncrease": 271, "hospitalizedIncrease": 547, "positiveIncrease": 41332}, "2020-06-29": {"deathIncrease": 358, "hospitalizedIncrease": 734, "positiveIncrease": 39765}, "2020-06-30": {"deathIncrease": 584, "hospitalizedIncrease": 1483, "positiveIncrease": 47630}, "2020-07-01": {"deathIncrease": 689, "hospitalizedIncrease": 1433, "positiveIncrease": 51001}, "2020-07-02": {"deathIncrease": 696, "hospitalizedIncrease": 1694, "positiveIncrease": 53508}, "2020-07-03": {"deathIncrease": 602, "hospitalizedIncrease": 1344, "positiveIncrease": 53688}, "2020-07-04": {"deathIncrease": 300, "hospitalizedIncrease": 872, "positiveIncrease": 54144}, "2020-07-05": {"deathIncrease": 207, "hospitalizedIncrease": 582, "positiveIncrease": 45167}, "2020-07-06": {"deathIncrease": 266, "hospitalizedIncrease": 818, "positiveIncrease": 41494}, "2020-07-07": {"deathIncrease": 905, "hospitalizedIncrease": 1936, "positiveIncrease": 51742}, "2020-07-08": {"deathIncrease": 812, "hospitalizedIncrease": 1888, "positiveIncrease": 62736}, "2020-07-09": {"deathIncrease": 900, "hospitalizedIncrease": 1654, "positiveIncrease": 58959}, "2020-07-10": {"deathIncrease": 822, "hospitalizedIncrease": 2207, "positiveIncrease": 66824}, "2020-07-11": {"deathIncrease": 752, "hospitalizedIncrease": 5070, "positiveIncrease": 62324}, "2020-07-12": {"deathIncrease": 474, "hospitalizedIncrease": 894, "positiveIncrease": 60972}, "2020-07-13": {"deathIncrease": 331, "hospitalizedIncrease": 1174, "positiveIncrease": 57603}, "2020-07-14": {"deathIncrease": 739, "hospitalizedIncrease": 2212, "positiveIncrease": 62734}, "2020-07-15": {"deathIncrease": 860, "hospitalizedIncrease": 2404, "positiveIncrease": 65617}, "2020-07-16": {"deathIncrease": 953, "hospitalizedIncrease": 2195, "positiveIncrease": 70449}, "2020-07-17": {"deathIncrease": 936, "hospitalizedIncrease": 2480, "positiveIncrease": 76218}, "2020-07-18": {"deathIncrease": 873, "hospitalizedIncrease": 1976, "positiveIncrease": 64422}, "2020-07-19": {"deathIncrease": 527, "hospitalizedIncrease": 888, "positiveIncrease": 63715}, "2020-07-20": {"deathIncrease": 369, "hospitalizedIncrease": 1623, "positiveIncrease": 56935}, "2020-07-21": {"deathIncrease": 1069, "hospitalizedIncrease": 2510, "positiveIncrease": 63625}, "2020-07-22": {"deathIncrease": 1134, "hospitalizedIncrease": 2246, "positiveIncrease": 69346}, "2020-07-23": {"deathIncrease": 1061, "hospitalizedIncrease": 2378, "positiveIncrease": 71225}, "2020-07-24": {"deathIncrease": 1192, "hospitalizedIncrease": 3040, "positiveIncrease": 74854}, "2020-07-25": {"deathIncrease": 1005, "hospitalizedIncrease": 1811, "positiveIncrease": 64376}, "2020-07-26": {"deathIncrease": 560, "hospitalizedIncrease": 1380, "positiveIncrease": 60123}, "2020-07-27": {"deathIncrease": 1065, "hospitalizedIncrease": 1671, "positiveIncrease": 55013}, "2020-07-28": {"deathIncrease": 1128, "hospitalizedIncrease": 4051, "positiveIncrease": 58984}, "2020-07-29": {"deathIncrease": 1491, "hospitalizedIncrease": 2868, "positiveIncrease": 63941}, "2020-07-30": {"deathIncrease": 1248, "hospitalizedIncrease": 3279, "positiveIncrease": 68805}, "2020-07-31": {"deathIncrease": 1313, "hospitalizedIncrease": 2533, "positiveIncrease": 67530}, "2020-08-01": {"deathIncrease": 1192, "hospitalizedIncrease": 2366, "positiveIncrease": 60245}, "2020-08-02": {"deathIncrease": 494, "hospitalizedIncrease": 831, "positiveIncrease": 46511}, "2020-08-03": {"deathIncrease": 536, "hospitalizedIncrease": 1606, "positiveIncrease": 49348}, "2020-08-04": {"deathIncrease": 1239, "hospitalizedIncrease": 4408, "positiveIncrease": 51815}, "2020-08-05": {"deathIncrease": 1360, "hospitalizedIncrease": 2123, "positiveIncrease": 52464}, "2020-08-06": {"deathIncrease": 1248, "hospitalizedIncrease": 2594, "positiveIncrease": 53803}, "2020-08-07": {"deathIncrease": 1333, "hospitalizedIncrease": 7992, "positiveIncrease": 60836}, "2020-08-08": {"deathIncrease": 1084, "hospitalizedIncrease": 1479, "positiveIncrease": 53083}}
+{
+    "2020-05-01": {
+        "deathIncrease": 1808,
+        "hospitalizedIncrease": 9878,
+        "positiveIncrease": 32802
+    },
+    "2020-05-02": {
+        "deathIncrease": 1531,
+        "hospitalizedIncrease": 1986,
+        "positiveIncrease": 29034
+    },
+    "2020-05-03": {
+        "deathIncrease": 1243,
+        "hospitalizedIncrease": 1854,
+        "positiveIncrease": 25540
+    },
+    "2020-05-04": {
+        "deathIncrease": 1028,
+        "hospitalizedIncrease": 1772,
+        "positiveIncrease": 22501
+    },
+    "2020-05-05": {
+        "deathIncrease": 2494,
+        "hospitalizedIncrease": 1936,
+        "positiveIncrease": 22510
+    },
+    "2020-05-06": {
+        "deathIncrease": 1916,
+        "hospitalizedIncrease": 2159,
+        "positiveIncrease": 25143
+    },
+    "2020-05-07": {
+        "deathIncrease": 2752,
+        "hospitalizedIncrease": 4176,
+        "positiveIncrease": 27227
+    },
+    "2020-05-08": {
+        "deathIncrease": 1781,
+        "hospitalizedIncrease": 6240,
+        "positiveIncrease": 27159
+    },
+    "2020-05-09": {
+        "deathIncrease": 1456,
+        "hospitalizedIncrease": 1669,
+        "positiveIncrease": 25180
+    },
+    "2020-05-10": {
+        "deathIncrease": 1032,
+        "hospitalizedIncrease": 1048,
+        "positiveIncrease": 20890
+    },
+    "2020-05-11": {
+        "deathIncrease": 894,
+        "hospitalizedIncrease": 1369,
+        "positiveIncrease": 18298
+    },
+    "2020-05-12": {
+        "deathIncrease": 1506,
+        "hospitalizedIncrease": 1483,
+        "positiveIncrease": 22558
+    },
+    "2020-05-13": {
+        "deathIncrease": 1734,
+        "hospitalizedIncrease": 1791,
+        "positiveIncrease": 21628
+    },
+    "2020-05-14": {
+        "deathIncrease": 1852,
+        "hospitalizedIncrease": 3162,
+        "positiveIncrease": 26713
+    },
+    "2020-05-15": {
+        "deathIncrease": 1263,
+        "hospitalizedIncrease": 1313,
+        "positiveIncrease": 25422
+    },
+    "2020-05-16": {
+        "deathIncrease": 1195,
+        "hospitalizedIncrease": 1798,
+        "positiveIncrease": 23586
+    },
+    "2020-05-17": {
+        "deathIncrease": 850,
+        "hospitalizedIncrease": 1130,
+        "positiveIncrease": 20152
+    },
+    "2020-05-18": {
+        "deathIncrease": 889,
+        "hospitalizedIncrease": 1133,
+        "positiveIncrease": 20844
+    },
+    "2020-05-19": {
+        "deathIncrease": 1332,
+        "hospitalizedIncrease": 1549,
+        "positiveIncrease": 20882
+    },
+    "2020-05-20": {
+        "deathIncrease": 1390,
+        "hospitalizedIncrease": 1759,
+        "positiveIncrease": 21259
+    },
+    "2020-05-21": {
+        "deathIncrease": 1427,
+        "hospitalizedIncrease": 4547,
+        "positiveIncrease": 26742
+    },
+    "2020-05-22": {
+        "deathIncrease": 1303,
+        "hospitalizedIncrease": 3945,
+        "positiveIncrease": 24173
+    },
+    "2020-05-23": {
+        "deathIncrease": 1035,
+        "hospitalizedIncrease": 1383,
+        "positiveIncrease": 22365
+    },
+    "2020-05-24": {
+        "deathIncrease": 684,
+        "hospitalizedIncrease": 1027,
+        "positiveIncrease": 18860
+    },
+    "2020-05-25": {
+        "deathIncrease": 554,
+        "hospitalizedIncrease": 901,
+        "positiveIncrease": 18531
+    },
+    "2020-05-26": {
+        "deathIncrease": 672,
+        "hospitalizedIncrease": 17287,
+        "positiveIncrease": 16978
+    },
+    "2020-05-27": {
+        "deathIncrease": 1316,
+        "hospitalizedIncrease": 1563,
+        "positiveIncrease": 19411
+    },
+    "2020-05-28": {
+        "deathIncrease": 1242,
+        "hospitalizedIncrease": 1596,
+        "positiveIncrease": 22659
+    },
+    "2020-05-29": {
+        "deathIncrease": 1169,
+        "hospitalizedIncrease": 1565,
+        "positiveIncrease": 23588
+    },
+    "2020-05-30": {
+        "deathIncrease": 918,
+        "hospitalizedIncrease": 1425,
+        "positiveIncrease": 23437
+    },
+    "2020-05-31": {
+        "deathIncrease": 651,
+        "hospitalizedIncrease": 896,
+        "positiveIncrease": 21392
+    },
+    "2020-06-01": {
+        "deathIncrease": 671,
+        "hospitalizedIncrease": 2858,
+        "positiveIncrease": 20362
+    },
+    "2020-06-02": {
+        "deathIncrease": 1000,
+        "hospitalizedIncrease": 1736,
+        "positiveIncrease": 20155
+    },
+    "2020-06-03": {
+        "deathIncrease": 980,
+        "hospitalizedIncrease": 2145,
+        "positiveIncrease": 20155
+    },
+    "2020-06-04": {
+        "deathIncrease": 864,
+        "hospitalizedIncrease": -2849,
+        "positiveIncrease": 20383
+    },
+    "2020-06-05": {
+        "deathIncrease": 844,
+        "hospitalizedIncrease": 1513,
+        "positiveIncrease": 23066
+    },
+    "2020-06-06": {
+        "deathIncrease": 711,
+        "hospitalizedIncrease": 982,
+        "positiveIncrease": 22558
+    },
+    "2020-06-07": {
+        "deathIncrease": 446,
+        "hospitalizedIncrease": 655,
+        "positiveIncrease": 18818
+    },
+    "2020-06-08": {
+        "deathIncrease": 676,
+        "hospitalizedIncrease": 1095,
+        "positiveIncrease": 17230
+    },
+    "2020-06-09": {
+        "deathIncrease": 901,
+        "hospitalizedIncrease": 1263,
+        "positiveIncrease": 17151
+    },
+    "2020-06-10": {
+        "deathIncrease": 884,
+        "hospitalizedIncrease": 1237,
+        "positiveIncrease": 20727
+    },
+    "2020-06-11": {
+        "deathIncrease": 899,
+        "hospitalizedIncrease": 1527,
+        "positiveIncrease": 22071
+    },
+    "2020-06-12": {
+        "deathIncrease": 763,
+        "hospitalizedIncrease": 1380,
+        "positiveIncrease": 23096
+    },
+    "2020-06-13": {
+        "deathIncrease": 690,
+        "hospitalizedIncrease": 943,
+        "positiveIncrease": 25245
+    },
+    "2020-06-14": {
+        "deathIncrease": 355,
+        "hospitalizedIncrease": 610,
+        "positiveIncrease": 21333
+    },
+    "2020-06-15": {
+        "deathIncrease": 406,
+        "hospitalizedIncrease": 688,
+        "positiveIncrease": 18654
+    },
+    "2020-06-16": {
+        "deathIncrease": 706,
+        "hospitalizedIncrease": 1173,
+        "positiveIncrease": 23268
+    },
+    "2020-06-17": {
+        "deathIncrease": 794,
+        "hospitalizedIncrease": 1081,
+        "positiveIncrease": 23906
+    },
+    "2020-06-18": {
+        "deathIncrease": 693,
+        "hospitalizedIncrease": 1095,
+        "positiveIncrease": 27089
+    },
+    "2020-06-19": {
+        "deathIncrease": 656,
+        "hospitalizedIncrease": 1587,
+        "positiveIncrease": 30959
+    },
+    "2020-06-20": {
+        "deathIncrease": 611,
+        "hospitalizedIncrease": 686,
+        "positiveIncrease": 31951
+    },
+    "2020-06-21": {
+        "deathIncrease": 293,
+        "hospitalizedIncrease": 519,
+        "positiveIncrease": 28848
+    },
+    "2020-06-22": {
+        "deathIncrease": 294,
+        "hospitalizedIncrease": 847,
+        "positiveIncrease": 27179
+    },
+    "2020-06-23": {
+        "deathIncrease": 725,
+        "hospitalizedIncrease": 1262,
+        "positiveIncrease": 33885
+    },
+    "2020-06-24": {
+        "deathIncrease": 707,
+        "hospitalizedIncrease": 1255,
+        "positiveIncrease": 39009
+    },
+    "2020-06-25": {
+        "deathIncrease": 663,
+        "hospitalizedIncrease": 1279,
+        "positiveIncrease": 39681
+    },
+    "2020-06-26": {
+        "deathIncrease": 624,
+        "hospitalizedIncrease": 1546,
+        "positiveIncrease": 44379
+    },
+    "2020-06-27": {
+        "deathIncrease": 502,
+        "hospitalizedIncrease": 1048,
+        "positiveIncrease": 42893
+    },
+    "2020-06-28": {
+        "deathIncrease": 271,
+        "hospitalizedIncrease": 547,
+        "positiveIncrease": 41332
+    },
+    "2020-06-29": {
+        "deathIncrease": 358,
+        "hospitalizedIncrease": 734,
+        "positiveIncrease": 39765
+    },
+    "2020-06-30": {
+        "deathIncrease": 584,
+        "hospitalizedIncrease": 1483,
+        "positiveIncrease": 47630
+    },
+    "2020-07-01": {
+        "deathIncrease": 689,
+        "hospitalizedIncrease": 1433,
+        "positiveIncrease": 51001
+    },
+    "2020-07-02": {
+        "deathIncrease": 696,
+        "hospitalizedIncrease": 1694,
+        "positiveIncrease": 53508
+    },
+    "2020-07-03": {
+        "deathIncrease": 602,
+        "hospitalizedIncrease": 1344,
+        "positiveIncrease": 53688
+    },
+    "2020-07-04": {
+        "deathIncrease": 300,
+        "hospitalizedIncrease": 872,
+        "positiveIncrease": 54144
+    },
+    "2020-07-05": {
+        "deathIncrease": 207,
+        "hospitalizedIncrease": 582,
+        "positiveIncrease": 45167
+    },
+    "2020-07-06": {
+        "deathIncrease": 266,
+        "hospitalizedIncrease": 818,
+        "positiveIncrease": 41494
+    },
+    "2020-07-07": {
+        "deathIncrease": 905,
+        "hospitalizedIncrease": 1936,
+        "positiveIncrease": 51742
+    },
+    "2020-07-08": {
+        "deathIncrease": 812,
+        "hospitalizedIncrease": 1888,
+        "positiveIncrease": 62736
+    },
+    "2020-07-09": {
+        "deathIncrease": 900,
+        "hospitalizedIncrease": 1654,
+        "positiveIncrease": 58959
+    },
+    "2020-07-10": {
+        "deathIncrease": 822,
+        "hospitalizedIncrease": 2207,
+        "positiveIncrease": 66824
+    },
+    "2020-07-11": {
+        "deathIncrease": 752,
+        "hospitalizedIncrease": 5070,
+        "positiveIncrease": 62324
+    },
+    "2020-07-12": {
+        "deathIncrease": 474,
+        "hospitalizedIncrease": 894,
+        "positiveIncrease": 60972
+    },
+    "2020-07-13": {
+        "deathIncrease": 331,
+        "hospitalizedIncrease": 1174,
+        "positiveIncrease": 57603
+    },
+    "2020-07-14": {
+        "deathIncrease": 739,
+        "hospitalizedIncrease": 2212,
+        "positiveIncrease": 62734
+    },
+    "2020-07-15": {
+        "deathIncrease": 860,
+        "hospitalizedIncrease": 2404,
+        "positiveIncrease": 65617
+    },
+    "2020-07-16": {
+        "deathIncrease": 953,
+        "hospitalizedIncrease": 2195,
+        "positiveIncrease": 70449
+    },
+    "2020-07-17": {
+        "deathIncrease": 936,
+        "hospitalizedIncrease": 2480,
+        "positiveIncrease": 76218
+    },
+    "2020-07-18": {
+        "deathIncrease": 873,
+        "hospitalizedIncrease": 1976,
+        "positiveIncrease": 64422
+    },
+    "2020-07-19": {
+        "deathIncrease": 527,
+        "hospitalizedIncrease": 888,
+        "positiveIncrease": 63715
+    },
+    "2020-07-20": {
+        "deathIncrease": 369,
+        "hospitalizedIncrease": 1623,
+        "positiveIncrease": 56935
+    },
+    "2020-07-21": {
+        "deathIncrease": 1069,
+        "hospitalizedIncrease": 2510,
+        "positiveIncrease": 63625
+    },
+    "2020-07-22": {
+        "deathIncrease": 1134,
+        "hospitalizedIncrease": 2246,
+        "positiveIncrease": 69346
+    },
+    "2020-07-23": {
+        "deathIncrease": 1061,
+        "hospitalizedIncrease": 2378,
+        "positiveIncrease": 71225
+    },
+    "2020-07-24": {
+        "deathIncrease": 1192,
+        "hospitalizedIncrease": 3040,
+        "positiveIncrease": 74854
+    },
+    "2020-07-25": {
+        "deathIncrease": 1005,
+        "hospitalizedIncrease": 1811,
+        "positiveIncrease": 64376
+    },
+    "2020-07-26": {
+        "deathIncrease": 560,
+        "hospitalizedIncrease": 1380,
+        "positiveIncrease": 60123
+    },
+    "2020-07-27": {
+        "deathIncrease": 1065,
+        "hospitalizedIncrease": 1671,
+        "positiveIncrease": 55013
+    },
+    "2020-07-28": {
+        "deathIncrease": 1128,
+        "hospitalizedIncrease": 4051,
+        "positiveIncrease": 58984
+    },
+    "2020-07-29": {
+        "deathIncrease": 1491,
+        "hospitalizedIncrease": 2868,
+        "positiveIncrease": 63941
+    },
+    "2020-07-30": {
+        "deathIncrease": 1248,
+        "hospitalizedIncrease": 3279,
+        "positiveIncrease": 68805
+    },
+    "2020-07-31": {
+        "deathIncrease": 1313,
+        "hospitalizedIncrease": 2533,
+        "positiveIncrease": 67530
+    },
+    "2020-08-01": {
+        "deathIncrease": 1192,
+        "hospitalizedIncrease": 2366,
+        "positiveIncrease": 60245
+    },
+    "2020-08-02": {
+        "deathIncrease": 494,
+        "hospitalizedIncrease": 831,
+        "positiveIncrease": 46511
+    },
+    "2020-08-03": {
+        "deathIncrease": 536,
+        "hospitalizedIncrease": 1606,
+        "positiveIncrease": 49348
+    },
+    "2020-08-04": {
+        "deathIncrease": 1239,
+        "hospitalizedIncrease": 4408,
+        "positiveIncrease": 51815
+    },
+    "2020-08-05": {
+        "deathIncrease": 1360,
+        "hospitalizedIncrease": 2123,
+        "positiveIncrease": 52464
+    },
+    "2020-08-06": {
+        "deathIncrease": 1248,
+        "hospitalizedIncrease": 2594,
+        "positiveIncrease": 53803
+    },
+    "2020-08-07": {
+        "deathIncrease": 1333,
+        "hospitalizedIncrease": 7992,
+        "positiveIncrease": 60836
+    },
+    "2020-08-08": {
+        "deathIncrease": 1084,
+        "hospitalizedIncrease": 1479,
+        "positiveIncrease": 53083
+    }
+}
