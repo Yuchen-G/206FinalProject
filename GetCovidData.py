@@ -78,6 +78,6 @@ class GetCovidData(GetData):
                 self.cache_or_fetch(cache_dict, datetime, url)
 
 
-if __name__ == "__main__":
-    Covid = GetCovidData("test_cache_Covid")
-    Covid.get_data_with_caching()
+# if __name__ == "__main__":
+#     Covid = GetCovidData("test_cache_Covid")
+#     Covid.get_data_with_caching()

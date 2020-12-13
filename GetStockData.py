@@ -7,7 +7,7 @@ from GetData import GetData
 # Get the stock price data from twelve data api
 class GetStockData(GetData):
     TIME_PERIOD = 60
-    CALLS = 8
+    CALLS = 25
 
     def __init__(self, CACHE_FNAME):
         super().__init__(CACHE_FNAME)
@@ -28,14 +28,14 @@ class GetStockData(GetData):
 
         try:
             # ---> will need to update the erro message, ticker especially when changing the company
-            if r.text == '''{"code":400,"message":"No data is available on the specified dates. Try setting different start/end dates.","status":"error","meta":{"symbol":"AAPL","interval":"1day","exchange":""}}''':
-                print("DATA NOT AVAILABLE, use previous data\n--------------")
+            if r.text == '''{"pagination":{"limit":100,"offset":0,"count":0,"total":0},"data":[]}''':
+                print("DATA NOT AVAILABLE\n--------------")
                 cache_dict[datetime] = -99
                 self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
                 return None
             else:
                 content = json.loads(r.text)
-                cache_dict[datetime] = float(content["values"][0]["close"])  # Attention!!! type is float
+                cache_dict[datetime] = float(content["data"][0]["adj_close"])  # Attention!!! type is float
                 self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
                 print("Data fetched\n--------------")
         except:
@@ -199,8 +199,8 @@ class GetStockData(GetData):
 
 
 # if __name__ == "__main__":
-#     Stock = GetStockData("test_cache_stock")
+#     Stock = GetStockData("cache_stock")
 #     Stock.get_data_with_caching()
-#     # print(Stock.create_request_url("2020-05-28", "2020-05-29"))
-#     # print(check_progress('cache_stock'))
-#     # get_date('cache_stock')
+    # print(Stock.create_request_url("2020-05-28", "2020-05-29"))
+    # print(check_progress('cache_stock'))
+    # get_date('cache_stock')

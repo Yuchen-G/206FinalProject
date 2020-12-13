@@ -10,8 +10,11 @@ class GetData:
         # Name of the Cache file
         self.CACHE_FNAME = CACHE_FNAME
         # Get the stock price data from twelve data api
-        self.STOCK_API_KEY = 'e94271ad5ef44b5bb5d4bfda57f7188b'
+        # self.STOCK_API_KEY = 'e94271ad5ef44b5bb5d4bfda57f7188b' # twelvedata
+        # self.STOCK_API_KEY = 'CILI5QD4WNMUADKC' # alpha vantage
+        self.STOCK_API_KEY = '77a7c7e8c70508d00d41bac85b5107cf'
         self.STOCK_TIME_PERIOD = 60
+
         # Get the weather data from worldweatheronline api
         self.WEATHER_API_KEY = "9c9aed8125084cfaaa073014200312"
         self.WEATHER_API_KEY_1 = "55d80763931641b2b5e73127200312"
@@ -45,11 +48,9 @@ class GetData:
         # end_date = "2020-08-01"
         dp = 2  # decimal place, type int
 
-        params = f"?symbol={ticker}&interval={interval}"\
-            f"&start_date={start_date}&end_date={end_date}"\
-            f"&dp={dp}&apikey={self.STOCK_API_KEY}"
+        params = f"access_key={self.STOCK_API_KEY}&symbols={ticker}&date_from={start_date}&date_to={end_date}"
 
-        url = "https://api.twelvedata.com/time_series" + params
+        url = "http://api.marketstack.com/v1/eod?" + params
         print(url)
         return url
 
@@ -146,6 +147,7 @@ class GetData:
     #             self.cache_or_fetch(cache_dict, datetime, url)
 
 
-# if __name__ == "__main__":
-    # stock = GetData("test_cache_stock")
+if __name__ == "__main__":
+    stock = GetData("test_cache_stock")
+    stock.create_request_url('2020-05-01','2020-05-02')
     # stock.get_data_with_caching()
