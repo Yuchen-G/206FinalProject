@@ -27,8 +27,8 @@ class CacheHelper:
 
     def write_cache(self, cache_file, cache_dict):
         """
-        This function encodes the cache dictionary (CACHE_DICT) into JSON format and
-        writes the JSON to the cache file (CACHE_FNAME) to save the search results.
+        This function encodes the cache dictionary (cache_dict) into JSON format and
+        writes the JSON to the cache file (cache_file) to save the search results.
         """
         dumped_json_cache = json.dumps(cache_dict)
         fw = open(cache_file + ".json", 'w')

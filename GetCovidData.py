@@ -5,15 +5,24 @@ from GetData import GetData
 
 
 class GetCovidData(GetData):
+    '''
+    This class serves to get the covid data from https://covidtracking.com/data/api
+    It inherits most of the methods from GetData class
+    '''
     TIME_PERIOD = 30
     CALLS = 25
 
     def __init__(self, CACHE_FNAME):
+        '''
+        The constructor takes in the name of the cache file for data collection and inherits code from GetData.py.
+        '''
         super().__init__(CACHE_FNAME)
 
     def create_request_url(self, start_date):
         """
-        This function prepares and returns the request url for the API call.
+        This function takes in the specific date of the data that the API is trying to retrieve 
+        and prepares and returns the request url for the API call.
+        Documentation is at https://covidtracking.com/data/api
         """
 
         'https://api.covidtracking.com/v1/us/20200501.json'
@@ -26,7 +35,13 @@ class GetCovidData(GetData):
     @sleep_and_retry
     @limits(calls=CALLS, period=TIME_PERIOD)
     def fetch_data(self, cache_dict, datetime, url):
-        ''' fetch data from API'''
+        ''' 
+        This method fetches data from API and save it into the JSON format cache dictionary.
+        It takes in the JSON format cache dictionary, the specific date of the data that we are
+        trying to get, and the request url for the API call. 
+        It utilizes a ratelimit decorator to determine the frequency of calling and 
+        returns None when failing to retrieve the data from the API
+        '''
 
         # counter
         self.counter += 1
@@ -47,7 +62,11 @@ class GetCovidData(GetData):
             return None
 
     def get_data_with_caching(self):
-        """get stock price data from the api with caching"""
+        """
+        This method gets stock price data from the api with caching.
+        It creates a list containing the time range that we want to collect the data with
+        and calls fetch_data or cache_or_fetch method for further processing. 
+        """
 
         # get the datetime that needs to be fetched from API or cached file
         last_date = self.check_progress()

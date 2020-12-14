@@ -9,7 +9,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class WriteData:
+    '''
+    This class writes the input into databases.
+    Besides, it is able to calculate correlation coefficients and 
+    draws graphs.
+    '''
+
     def __init__(self, db_name, tb_name_1, tb_name_2,tb_name_3):
+        '''
+        This constructor initializes variables.
+        It takes in the database name and three table names
+        that we are trying to create. 
+        '''
         self.db_name = db_name
         self.tb_name_1 = tb_name_1
         self.tb_name_2 = tb_name_2
@@ -17,12 +28,22 @@ class WriteData:
         self.Cache = CacheHelper()
 
     def SetUpDatabase(self):
+        '''
+        This method sets up the database
+        It doesn't take any input but will create a sqlite3 database
+        '''
         path = os.path.dirname(os.path.abspath(__file__))
         conn = sqlite3.connect(path+'/' + self.db_name + '.db')
         cur = conn.cursor()
         return cur, conn
 
     def SetUpTable(self, cachefile1, cachefile2, cachefile3, cur, conn):
+        '''
+        This method takes in the three cache files and the cur conn that connects to the database.
+        It creates tables if they are not exist and updates values from the JSON cache file 
+        into the database.
+        It also delete bad values from the database(ex: weekends that have no information about stock price)
+        '''
         # loads the data into dictionaries
         stock_data = self.Cache.read_cache(cachefile1)
         weather_data = self.Cache.read_cache(cachefile2)
@@ -65,7 +86,7 @@ class WriteData:
 
     def write_correl(self, filename, input):
         '''
-        write the input into a txt file
+        This function takes in the input value and writes the data into a txt file.
         '''
 
         with open(filename,'a') as fh:
@@ -76,7 +97,9 @@ class WriteData:
 
     def correl(self, col0, tb0, col1, tb1, cur, conn):
         """
-        calculate the correlation coefficient for two datasets in the database
+        This function takes each column from two tables and 
+        calculates the correlation coefficient for two datasets in the database.
+        It returns the correlation coefficient.
         """
 
         # x axis is weather info
@@ -104,6 +127,11 @@ class WriteData:
         return r[0,1]
 
     def viz(self, col0, tb0, col1, tb1, cur, conn, x_label, y_label, title0):
+        '''
+        This function takes string of x axis, y axis, and graph title. It also takes each column from two tables 
+        and store the data in list then create a scatter plot using these data points. 
+        It returns a scatter plot graph by the given data and strings.
+        '''
         # x axis is weather info
         cur.execute(f'SELECT {col0} FROM {tb0}')
         x = cur.fetchall()

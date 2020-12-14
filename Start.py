@@ -5,6 +5,11 @@ from WriteData import WriteData
 from CacheHelper import CacheHelper
 
 Cache = CacheHelper()
+'''
+This file runs the entire code by calling other classes. 
+It will output the calculation(four correlation coefficients) into 'output.txt' 
+and print four graphs after 5 executions.  
+'''
 
 if __name__ == "__main__":
     # define variables
@@ -16,14 +21,14 @@ if __name__ == "__main__":
     tb_weather = "WeatherData"
     tb_Covid = "CovidData"
     # Get Stock Data
-    # Stock = GetStockData(cache_stock)
-    # Stock.get_data_with_caching()
+    Stock = GetStockData(cache_stock)
+    Stock.get_data_with_caching()
     # Get Weather Data
-    # Weather = GetWeatherData(cache_weather)
-    # Weather.get_data_with_caching()
+    Weather = GetWeatherData(cache_weather)
+    Weather.get_data_with_caching()
     # Get Covid Data
-    # Covid = GetCovidData(cache_Covid)
-    # Covid.get_data_with_caching()
+    Covid = GetCovidData(cache_Covid)
+    Covid.get_data_with_caching()
     # Write data into database
     writer = WriteData(db_name, tb_stock, tb_weather, tb_Covid)
     cur, conn = writer.SetUpDatabase()

@@ -6,17 +6,30 @@ from GetData import GetData
 
 # Get the stock price data from twelve data api
 class GetStockData(GetData):
+    '''
+    This class serves to get Apple's stock price data.
+    It inherits most of the methods from GetData class.
+    '''
     TIME_PERIOD = 60
     CALLS = 25
 
     def __init__(self, CACHE_FNAME):
+        '''
+        The constructor takes in the name of the cache file for data collection and inherits code from GetData.py.
+        '''
         super().__init__(CACHE_FNAME)
 
 
     @sleep_and_retry
     @limits(calls=CALLS, period=TIME_PERIOD)
     def fetch_data(self, cache_dict, datetime, url):
-        ''' fetch data from API
+        ''' 
+        This method fetches data from API and save it into the JSON format cache dictionary.
+        It takes in the JSON format cache dictionary, the specific date of the data that we are
+        trying to get, and the request url for the API call. 
+        It utilizes a ratelimit decorator to determine the frequency of calling and 
+        returns None when failing to retrieve the data from the API and set the value of stock price
+        at -99 if the data is not available on that date.
         '''
 
         # counter
@@ -44,7 +57,10 @@ class GetStockData(GetData):
 
 
     def get_data_with_caching(self):
-        """get stock price data from the api with caching
+        """
+        This function get stock price data from the api with caching.
+        It creates a list containing the time range that we want to collect the data with
+        and calls fetch_data or cache_or_fetch method for further processing. 
         """
 
         # get the datetime that needs to be fetched from API or cached file

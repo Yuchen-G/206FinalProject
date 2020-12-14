@@ -5,13 +5,20 @@ import json
 
 
 class GetData:
+    '''
+    This class defines methods for getting data from specific API
+    '''
 
     def __init__(self, CACHE_FNAME):
+        '''
+        This constructor initializes objects for GetData class.
+        It takes in the name of the cache file and initializes variables.
+        '''
         # Name of the Cache file
         self.CACHE_FNAME = CACHE_FNAME
         # Get the stock price data from twelve data api
-        # self.STOCK_API_KEY = 'e94271ad5ef44b5bb5d4bfda57f7188b' # twelvedata
-        # self.STOCK_API_KEY = 'CILI5QD4WNMUADKC' # alpha vantage
+        # self.STOCK_API_KEY = 'e94271ad5ef44b5bb5d4bfda57f7188b' # twelvedata discard
+        # self.STOCK_API_KEY = 'CILI5QD4WNMUADKC' # alpha vantage discard 
         self.STOCK_API_KEY = '77a7c7e8c70508d00d41bac85b5107cf'
         self.STOCK_TIME_PERIOD = 60
 
@@ -24,7 +31,10 @@ class GetData:
         self.Cache = CacheHelper()
 
     def check_progress(self):
-        ''' check how much data has already been stored in the json file '''
+        '''
+        This method checks how much data has already been stored in the JSON file.
+        It returns the current progress after running. 
+        '''
 
         try:
             cache_dict = self.Cache.read_cache(self.CACHE_FNAME)
@@ -83,7 +93,10 @@ class GetData:
     #         return None
 
     def cache_or_fetch(self, cache_dict, datetime, url):
-        ''' determine whether to fetch the data from API or use the cached content
+        ''' 
+        This method determines whether to fetch the data from API or use the cached content.
+        It takes cache dictionary, datetime, and url. 
+        If date is already in dictionary, it will print "Using cache for {datetime}", return datetime, and fetch data for the datetime.
         '''
 
         # Using cached content
@@ -97,12 +110,13 @@ class GetData:
 
     def get_date(self):
         """
-        get the date for the url
+        This function gets the date for the url.
+        It doesn't take any input and returns a list of formed date from url.
         """
 
         self.dates = []
-        # -->update   "5": "31", "6": "30", "7": "31", "8": "31"
-        self.timedict = {"5": "31", "6": "30", "7": "31", "8": "31"}
+        # -->update   "5": "31", "6": "30", "7": "31", "8": "31", "9": "30", "10": "31"
+        self.timedict = {"5": "31", "6": "30", "7": "31", "8": "31", "9": "30", "10": "31"}
 
         # create a list containing all the dates
         for month in self.timedict:
@@ -147,7 +161,7 @@ class GetData:
     #             self.cache_or_fetch(cache_dict, datetime, url)
 
 
-if __name__ == "__main__":
-    stock = GetData("test_cache_stock")
-    stock.create_request_url('2020-05-01','2020-05-02')
+# if __name__ == "__main__":
+#     stock = GetData("test_cache_stock")
+#     stock.create_request_url('2020-05-01','2020-05-02')
     # stock.get_data_with_caching()
