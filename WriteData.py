@@ -15,7 +15,7 @@ class WriteData:
     draws graphs.
     '''
 
-    def __init__(self, db_name, tb_name_1, tb_name_2,tb_name_3):
+    def __init__(self, db_name, tb_name_1, tb_name_2,tb_name_3,tb_name_4):
         '''
         This constructor initializes variables.
         It takes in the database name and three table names
@@ -25,6 +25,7 @@ class WriteData:
         self.tb_name_1 = tb_name_1
         self.tb_name_2 = tb_name_2
         self.tb_name_3 = tb_name_3
+        self.tb_name_4 = tb_name_4
         self.Cache = CacheHelper()
 
     def SetUpDatabase(self):
@@ -56,6 +57,8 @@ class WriteData:
             f"CREATE TABLE IF NOT EXISTS {self.tb_name_2} (id TEXT PRIMARY KEY, temp INTEGER)")
         cur.execute(
             f"CREATE TABLE IF NOT EXISTS {self.tb_name_3} (id TEXT PRIMARY KEY, deathIncrease INTEGER, hospitalizedIncrease INTEGER, positiveIncrease INTEGER)")
+        cur.execute(
+            f"CREATE TABLE IF NOT EXISTS {self.tb_name_4} (id TEXT PRIMARY KEY, hospitalizedCumulative INTEGER)")
         # use for loop to enter records into table "StockData"
         for item in stock_data:
             id = item
@@ -74,11 +77,15 @@ class WriteData:
             deathIncrease = covid_data[item]["deathIncrease"]
             hospitalizedIncrease = covid_data[item]["hospitalizedIncrease"]
             positiveIncrease = covid_data[item]["positiveIncrease"]
+            hospitalizedCumulative = covid_data[item]["hospitalizedCumulative"]
             cur.execute(
                 f"INSERT OR IGNORE INTO {self.tb_name_3} (id, deathIncrease, hospitalizedIncrease, positiveIncrease) VALUES (?,?,?,?)", (id, deathIncrease, hospitalizedIncrease, positiveIncrease))
+            cur.execute(
+                f"INSERT OR IGNORE INTO {self.tb_name_4} (id, hospitalizedCumulative) VALUES (?,?)", (id, hospitalizedCumulative))
         # handle bad value
         cur.execute('DELETE FROM WeatherData WHERE WeatherData.id IN (SELECT WeatherData.id FROM WeatherData JOIN StockData ON StockData.id = WeatherData.id WHERE StockData.closing_price = -99)')
         cur.execute('DELETE FROM CovidData WHERE CovidData.id IN (SELECT CovidData.id FROM CovidData JOIN StockData ON StockData.id = CovidData.id WHERE StockData.closing_price = -99)')
+        cur.execute('DELETE FROM CovidData1 WHERE CovidData.id IN (SELECT CovidData1.id FROM CovidData1 JOIN StockData ON StockData.id = CovidData1.id WHERE StockData.closing_price = -99)')
         cur.execute('DELETE FROM StockData WHERE StockData.closing_price = -99')
         # commit changes
         conn.commit()
