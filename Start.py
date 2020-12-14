@@ -35,7 +35,7 @@ if __name__ == "__main__":
     writer.SetUpTable(cache_stock, cache_weather, cache_Covid, cur, conn)
     # Get the correlation coefficients
     stock_dic = Cache.read_cache(cache_stock)
-    if stock_dic.get('2020-08-08', 0) == -99:
+    if stock_dic.get('2020-09-25', 0) != 0:
         # Correlation Coefficient 0
         correl0 = writer.correl('temp', 'WeatherData',
                                 'closing_price', 'StockData', cur, conn)

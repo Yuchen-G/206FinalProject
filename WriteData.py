@@ -159,6 +159,7 @@ class WriteData:
         plt.xlabel(x_label)
         plt.ylabel(y_label)
         plt.title(title0)
+        
         plt.show()
 
 # if __name__ == "__main__":
