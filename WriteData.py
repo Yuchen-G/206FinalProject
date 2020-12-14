@@ -103,7 +103,7 @@ class WriteData:
         r = np.corrcoef(l0, l1)
         return r[0,1]
 
-    def viz(self, col0, tb0, col1, tb1, cur, conn):
+    def viz(self, col0, tb0, col1, tb1, cur, conn, x_label, y_label, title0):
         # x axis is weather info
         cur.execute(f'SELECT {col0} FROM {tb0}')
         x = cur.fetchall()
@@ -122,14 +122,15 @@ class WriteData:
 
         conn.commit()
 
+        #create visualization
         x = np.array(l0)
         y = np.array(l1)
         plt.scatter(l0, l1)
         m, b = np.polyfit(x, y, 1)
         plt.plot(x, m*x + b, 'r')
-        plt.xlabel('Daily Covid Death Increase')
-        plt.ylabel("Apple stock's closing price")
-        plt.title('''Daily Covid Death Increase vs. Apple Stock's Closing Price''')
+        plt.xlabel(x_label)
+        plt.ylabel(y_label)
+        plt.title(title0)
         plt.show()
 
 # if __name__ == "__main__":

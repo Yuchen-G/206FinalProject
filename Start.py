@@ -56,5 +56,15 @@ if __name__ == "__main__":
             str(correl3)
         writer.write_correl('output.txt', str3)
         # Visualization
+        writer.viz('temp', 'weatherData',
+                    'closing_price', 'StockData', cur, conn, 'Daily Temperature',
+                    "Apple stock's closing price", '''Daily Temperature vs. Apple Stock's Closing Price''')
         writer.viz('positiveIncrease', 'CovidData',
-                   'closing_price', 'StockData', cur, conn)
+                   'closing_price', 'StockData', cur, conn, 'Daily Covid Positive Increase',
+                   "Apple stock's closing price", '''Daily Covid Positive Increase vs. Apple Stock's Closing Price''')
+        writer.viz('deathIncrease', 'CovidData',
+                   'closing_price', 'StockData', cur, conn, 'Daily Covid Death Increase',
+                   "Apple stock's closing price", '''Daily Covid Death Increase vs. Apple Stock's Closing Price''')
+        writer.viz('hospitalizedIncrease', 'CovidData',
+                   'closing_price', 'StockData', cur, conn, 'Daily Covid Hospitalized Increase',
+                   "Apple stock's closing price", '''Daily Covid Hospitalized Increase vs. Apple Stock's Closing Price''')
