@@ -53,8 +53,8 @@ class GetCovidData(GetData):
         try:
             # ---> will need to update the erro message, ticker especially when changing the company
             content = json.loads(r.text)
-            cache_dict[datetime] = {'deathIncrease': content["deathIncrease"],
-                                    "hospitalizedIncrease": content["hospitalizedIncrease"], "positiveIncrease": content["positiveIncrease"]}
+            cache_dict[datetime] = {'deathIncrease': content["deathIncrease"], "hospitalizedIncrease": content["hospitalizedIncrease"],
+                                    "positiveIncrease": content["positiveIncrease"], "hospitalizedCumulative": content["hospitalizedCumulative"]}
             self.Cache.write_cache(self.CACHE_FNAME, cache_dict)
             print("Data fetched\n--------------")
         except:
@@ -98,5 +98,6 @@ class GetCovidData(GetData):
 
 
 # if __name__ == "__main__":
-#     Covid = GetCovidData("test_cache_Covid")
+#     Covid = GetCovidData("cache_Covid")
+#     # print(Covid.create_request_url("2020-05-01"))
 #     Covid.get_data_with_caching()

@@ -85,7 +85,7 @@ class WriteData:
         # handle bad value
         cur.execute('DELETE FROM WeatherData WHERE WeatherData.id IN (SELECT WeatherData.id FROM WeatherData JOIN StockData ON StockData.id = WeatherData.id WHERE StockData.closing_price = -99)')
         cur.execute('DELETE FROM CovidData WHERE CovidData.id IN (SELECT CovidData.id FROM CovidData JOIN StockData ON StockData.id = CovidData.id WHERE StockData.closing_price = -99)')
-        cur.execute('DELETE FROM CovidData1 WHERE CovidData.id IN (SELECT CovidData1.id FROM CovidData1 JOIN StockData ON StockData.id = CovidData1.id WHERE StockData.closing_price = -99)')
+        cur.execute('DELETE FROM CovidData1 WHERE CovidData1.id IN (SELECT CovidData1.id FROM CovidData1 JOIN StockData ON StockData.id = CovidData1.id WHERE StockData.closing_price = -99)')
         cur.execute('DELETE FROM StockData WHERE StockData.closing_price = -99')
         # commit changes
         conn.commit()
