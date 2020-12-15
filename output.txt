@@ -1,4 +1,0 @@
-Correlation coefficient between temperature and Apple's stock price is 0.3953671607532146
-Correlation coefficient between daily positive cases and Apple's stock price is 0.4227454663655282
-Correlation coefficient between daily death cases and Apple's stock price is -0.21691779739437525
-Correlation coefficient between daily hospitalized cases and Apple's stock price is -0.16175921088825018
